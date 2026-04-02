@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./static/style.css">
+    <title>View and purchase Monomuse Tickets</title>
+    <script src="./static/script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <img id="logo" src="./static/monomuselogo.png" alt="MonoMuse Museum Logo">
+        </header>
+        <nav class="nav_bar">
+            <a href="../index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="exhibitions.html">Exhibitions</a>
+            <a href="buyticket.html">Buy Tickets</a>
+        </nav>
+        <main class="main">
+            <table>
+                <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                </tr>
+                <tr>
+                    <td>Adult</td>
+                    <td>General ticket for those 18 and over. Cannot be resold.</td>
+                    <td>$20</td>
+                </tr>
+                <tr>
+                    <td>Child</td>
+                    <td>General ticket for those under 18. Cannot be resold.</td>
+                    <td>$15</td>
+                </tr>
+                <tr>
+                    <td>Student</td>
+                    <td>General ticket for students with valid ID. Cannot be resold.</td>
+                    <td>$16</td>
+                </tr>
+            </table>
+
+  <div class="ticket-layout">
+    <div class="dates-panel">
+      <h4>Select a Date</h4>
+      <table class="dates-table">
+        <tr>
+          <th>Date</th>
+          <th>Time</th>
+          <th></th>
+        </tr>
+        <tr>
+          <td>April 1st</td>
+          <td>9:00 AM</td>
+          <td><button class="date-btn" onclick="showForm('April 1st')">Purchase</button></td>
+        </tr>
+        <tr>
+          <td>April 10th</td>
+          <td>12:00 PM</td>
+          <td><button class="date-btn" onclick="showForm('April 10th')">Purchase</button></td>
+        </tr>
+        <tr>
+          <td>April 20th</td>
+          <td>4:00 PM</td>
+          <td><button class="date-btn" onclick="showForm('April 20th')">Purchase</button></td>
+        </tr>
+        <tr>
+          <td>April 30th</td>
+          <td>9:00 AM</td>
+          <td><button class="date-btn" onclick="showForm('April 30th')">Purchase</button></td>
+        </tr>
+      </table>
+    </div>
+    <div id="purchaseForm" class="form-panel ticket_form" style="display: none;">
+      <h3>Complete Your Purchase</h3>
+      <form>
+        <label for="selectedDate">Date:</label>
+        <input type="text" id="selectedDate" name="selectedDate" readonly>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" min="1" value="1">
+        <button type="submit" onclick="submitForm(event)">Submit Request</button>
+      </form>
+    </div>
+  </div>
+        </main>
+        <footer class="footer">
+            <p>&copy; <span id="copyYear"></span> MonoMuse. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
