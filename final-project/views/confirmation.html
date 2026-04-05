@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./static/style.css">
+    <title>Order Confirmed - MonoMuse</title>
+    <script src="./static/script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <img id="logo" src="./static/monomuselogo.png" alt="MonoMuse Museum Logo">
+        </header>
+        <nav class="nav_bar">
+            <a href="../index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="exhibitions.html">Exhibitions</a>
+            <a href="buyticket.html">Buy Tickets</a>
+            <a href="membership.html">Membership</a>
+            <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">☰</a>
+        </nav>
+        <main class="main">
+            <div class="confirmation-box">
+                <h2>Order Confirmed!</h2>
+                <p>Thank you for your purchase. Your tickets have been reserved.</p>
+
+                <table class="confirmation-table">
+                    <tr>
+                        <td><strong>Visit Date</strong></td>
+                        <td id="confDate">—</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ticket Type</strong></td>
+                        <td id="confType">—</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Quantity</strong></td>
+                        <td id="confQty">—</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Email</strong></td>
+                        <td id="confEmail">—</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total Cost</strong></td>
+                        <td id="confTotal">—</td>
+                    </tr>
+                </table>
+
+                <p style="margin-top: 20px;">A confirmation email will be sent. </p>
+                <a class="cta" href="buyticket.html" style="margin-top: 16px; text-decoration: none;">Buy More Tickets</a>
+            </div>
+        </main>
+        <footer class="footer">
+            <p>&copy; <span id="copyYear"></span> MonoMuse.</p>
+        </footer>
+    </div>
+<!-- Code for confirmation page adapted from https://www.w3schools.com/Css/css_form.asp--> 
+    <script>
+        var params = new URLSearchParams(window.location.search);
+        var date = params.get("date");
+        var type = params.get("type");
+        var qty = params.get("qty");
+        var email = params.get("email");
+
+        if (date) {
+            document.getElementById("confDate").textContent = date;
+        }
+        if (type) {
+            document.getElementById("confType").textContent = type.charAt(0).toUpperCase() + type.slice(1);
+        }
+        if (qty) {
+            document.getElementById("confQty").textContent = qty;
+            var total = parseInt(qty) * 18;
+            document.getElementById("confTotal").textContent = "$" + total.toFixed(2);
+        }
+        if (email) {
+            document.getElementById("confEmail").textContent = email;
+        }
+    </script>
+</body>
+</html>
