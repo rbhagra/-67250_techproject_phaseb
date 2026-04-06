@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Rohan Bhagra">
+    <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
+    <meta name="description" content="MonoMuse website redesign project">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!--code for the fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./views/static/style.css">
+    <title>MonoMuse</title>
+    <script src="./views/static/script.js" defer></script>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+    <!-- code for the map -->
+
+</head>
+<!-- home page for monomuse-->
+<body>
+    <div class="container">
+        <header class="header">
+            <img id="logo" src="./views/static/monomuselogo.png" alt="MonoMuse Museum Logo">
+        </header>
+        <nav class="nav_bar">
+            <a href="index.html">Home</a>
+            <a href="views/explore.html">Explore</a>
+            <a href="views/exhibitions.html">Exhibitions</a>
+            <a href="views/buyticket.html">Buy Tickets</a>
+            <a href="views/membership.html">Membership</a>
+            <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">☰</a>
+        </nav>
+        <main class="main">
+            <div class="image-row">
+                <div class="image-text">
+                    <h2 id="greeting">Welcome to MonoMuse</h2>
+                    <p id="mainIntro">MonoMuse is a contemporary museum dedicated to exploring the intersection of art, technology, and human creativity. Through immersive exhibitions, interactive installations, and rotating collections, MonoMuse invites visitors to discover how digital innovation is transforming the way we create, experience, and understand art.<br><br>Whether you are a first-time visitor or a returning member, our exhibitions offer new perspectives on the role of technology in culture and everyday life. Plan your visit to experience cutting-edge exhibitions, hands-on experiences, and events designed to inspire curiosity and creativity.</p>
+                    <a class="cta" href="views/buyticket.html">Buy Tickets</a>
+                    <div class="expandedIntro">
+                        <!-- intro text and buttons to let people read more if they want to -->
+                        <p id="shortIntro">This museum offers a concise overview of how technology and art meet, with rotating exhibits for immersive visits. MonoMuse is at 1000 Forbes Ave, Pittsburgh, PA 15213, open 10:00 AM - 5:00 PM, Monday through Saturday.</p>
+                        <p id="longIntro">Members enjoy early access to new installations, guided tours, and a quarterly program of artist talks and workshops. School groups and community partners can book field trips and collaborative projects. Follow us for seasonal events, late-night openings, and digital previews of upcoming collections.</p>
+                        <span id="readMore" class="read-toggle" role="button" tabindex="0">Read More</span>
+                        <span id="readLess" class="read-toggle" role="button" tabindex="0">Read Less</span>
+                    </div>
+                </div>
+                <div class="gallery">
+                    <!-- displaying the image gallery, meant to be side by side with the intoduction text-->
+                    <h3>Gallery</h3>
+                    <div class="slideshow">
+                        <img class="slide active" src="./views/static/gallery1.png" alt="Gallery image 1, exterior of the museum">
+                        <img class="slide" src="./views/static/gallery2.png" alt="Gallery image 2, interior lobby area">
+                        <img class="slide" src="./views/static/gallery3.avif" alt="Gallery image 3, exhibit one of scientific art">
+                        <img class="slide" src="./views/static/gallery4.avif" alt="Gallery image 4, exhibit two of digital art, and a yellow mural">
+                        <button class="slide-btn prev">&#10094;</button>
+                        <button class="slide-btn next">&#10095;</button>
+                        <p class = "attribution"> Images courtesy of Nano Banana Pro (AI Generated) & Singapore ArtScience Museum</p>
+                    </div>
+                    <!-- Gallery code adapted from https://www.w3schools.com/Css/css_image_gallery.asp-->
+                </div>
+            </div>
+            <h3>Getting to the museum</h3>
+            <div id="map"></div>
+        </main>
+        <footer class="footer">
+            <p>&copy; <span id="copyYear"></span> MonoMuse.</p>
+        </footer>
+    </div>
+</body>
+</html>
